@@ -23,7 +23,7 @@ const schema = gql`
   }
 
   type Query {
-    assets: [Asset!]
+    assets: [Asset!]!
     rate(asset_id_base: String!, asset_id_quote: String!): Rate!
     historicalRates(
       asset_id_base: String!
@@ -31,8 +31,8 @@ const schema = gql`
       period_id: String!
       time_start: String!
       time_end: String
-    ): [HistoricalRate!]
-    popularRates: [Rate!]
+    ): [HistoricalRate!]!
+    popularRates: [Rate!]!
   }
 `;
 
