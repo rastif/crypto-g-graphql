@@ -28,8 +28,7 @@ const resolvers = {
       _: any,
       args: {
         asset_id_base: string;
-        asset_id_quote: string;
-        period_id: string;
+        granularity: string;
         time_start: string;
         time_end: string;
       }
@@ -37,8 +36,7 @@ const resolvers = {
       const queryParams = qs.stringify(
         {
           asset_id_base: args.asset_id_base,
-          asset_id_quote: args.asset_id_quote,
-          period_id: args.period_id,
+          granularity: args.granularity,
           time_start: args.time_start,
           time_end: args.time_end,
         },

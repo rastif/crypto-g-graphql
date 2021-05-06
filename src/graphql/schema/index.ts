@@ -12,25 +12,21 @@ const schema = gql`
   }
 
   type HistoricalRate {
-    time_period_start: String!
-    time_period_end: String!
-    time_open: String!
-    time_close: String!
+    time: Int!
+    price_low: Float!
+    price_high: Float!
     price_open: Float!
     price_close: Float!
-    price_high: Float!
-    price_low: Float!
   }
 
   type Query {
     assets: [Asset!]!
-    rate(asset_id_base: String!, asset_id_quote: String!): Rate!
+    rate(asset_id_base: String!): Rate!
     historicalRates(
       asset_id_base: String!
-      asset_id_quote: String!
-      period_id: String!
+      granularity: Int!
       time_start: String!
-      time_end: String
+      time_end: String!
     ): [HistoricalRate!]!
     popularRates: [Rate!]!
   }
